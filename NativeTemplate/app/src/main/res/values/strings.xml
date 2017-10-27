@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">NativeTemplate</string>
+
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+
+    <!--Form Input Elements-->
+    <string name="user_name">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="mobile">Mobile</string>
+    <string name="dob">Date of birth</string>
+
+    <!--Form Texts-->
+    <string name="dont_have_account">Don\'t you have account?</string>
+
+    <!--Buttons-->
+    <string name="login">Login</string>
+    <string name="singup">Signup</string>
+    <string name="forgot_pass">Forgot password</string>
+    <string name="reset_pass">Reset password</string>
+
+
 </resources>

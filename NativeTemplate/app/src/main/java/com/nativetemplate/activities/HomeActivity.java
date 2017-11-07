@@ -1,5 +1,6 @@
 package com.nativetemplate.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -7,10 +8,12 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -26,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         srecycler_items = (RecyclerView) findViewById(R.id.xrecycler_items);
-        topics_strings = new String[]{"SearchView", "RecyclerView", "ListView", "", "", "", "", "", "", "", "", "", "", "", "", "", "Google maps", "Dialogs & Pickers", "Gridview", "Expandable Listview", "Cardview", "Widgets"};
+        topics_strings = new String[]{"SearchView", "RecyclerView", "ListView", "Google maps", "Dialogs & Pickers", "Gridview", "Expandable Listview", "Cardview", "Widgets"};
 
         for(int ts=0; ts<topics_strings.length; ts++){
             home_topics.add(topics_strings[ts]);
@@ -51,39 +54,59 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> {
-
+    public class HomeAdapter extends RecyclerView.Adapter<MyViewHolder>
+    {
         private ArrayList<String> button_list = new ArrayList<>();
 
-        public class MyViewHolder extends RecyclerView.ViewHolder {
-            public Button sbtn_home_item;
-
-            public MyViewHolder(View view) {
-                super(view);
-                sbtn_home_item = (Button) view.findViewById(R.id.xbtn_home_item);
-            }
-        }
-
         public HomeAdapter(ArrayList<String> button_list) {
-            this.button_list = button_list;
+            this.button_list=button_list;
         }
 
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View itemView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.home_recycle_layout, parent, false);
-
-            return new MyViewHolder(itemView);
+            MyViewHolder rcv = new MyViewHolder(itemView);
+            return rcv;
         }
 
         @Override
-        public void onBindViewHolder(MyViewHolder holder, int position) {
+        public void onBindViewHolder(MyViewHolder holder, int position)
+        {
             holder.sbtn_home_item.setText(button_list.get(position));
         }
 
         @Override
-        public int getItemCount() {
+        public int getItemCount()
+        {
             return button_list.size();
         }
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder
+    {
+        public Button sbtn_home_item;
+
+        public MyViewHolder(View view)
+        {
+            super(view);
+            sbtn_home_item = (Button) view.findViewById(R.id.xbtn_home_item);
+
+            view.setClickable(true);
+
+            sbtn_home_item.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    Log.e("ItemPositoipn","--"+getLayoutPosition());
+                    Toast.makeText(HomeActivity.this, "button_list:"+getLayoutPosition(), Toast.LENGTH_SHORT).show();
+                    Intent webservice=new Intent(HomeActivity.this,GoogleVision.class);
+                    startActivity(webservice);
+                }
+            });
+
+        }
+
     }
 }

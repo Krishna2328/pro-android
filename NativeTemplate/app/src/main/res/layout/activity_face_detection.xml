@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="match_parent"
+    tools:context="com.nativetemplate.activities.FaceDetection">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pick a Image"
+        android:textAllCaps="false"
+        android:id="@+id/xbtn_pickimage"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        android:id="@+id/xiv_image"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:layout_below="@+id/xbtn_pickimage"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/xiv_image"
+        android:id="@+id/xtv_face_detection"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="test"
+        android:textSize="16dp"/>
+</RelativeLayout>

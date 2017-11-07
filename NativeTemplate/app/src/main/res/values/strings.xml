@@ -22,5 +22,13 @@
     <string name="forgot_pass">Forgot password</string>
     <string name="reset_pass">Reset password</string>
 
-
+    <string name="dialog_select_prompt">Choose a picture</string>
+    <string name="dialog_select_camera">Camera</string>
+    <string name="dialog_select_gallery">Gallery</string>
+    <string name="pagesWithMatchingImages">Pages With Matching Images</string>
+    <string name="visuallySimilarImages">Visually Similar Images</string>
+    <string name="fullMatchingImages">Full Matching Images</string>
+    <string name="partialMatchingImages">Partial Matching Images</string>
+    <string name="webEntities">Web Entities</string>
+    <string name="image_picker_error">Something is wrong with that image. Pick a different one please.</string>
 </resources>

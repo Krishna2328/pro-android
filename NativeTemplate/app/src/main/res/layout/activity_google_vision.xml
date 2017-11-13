@@ -19,7 +19,7 @@
             android:id="@+id/xrl_welcome"
             android:textSize="20dp"
             android:padding="25dp"
-             android:visibility="visible"
+             android:visibility="gone"
             android:text="Hey, \n\n\t Welcome to AI. \n\n\t We are able to give you suggestions depends upon your capture.\n\n\t Are you excited?.\n\n\t Then Click Camera above and you will see magic.."/>
         <ImageView
             android:layout_width="match_parent"

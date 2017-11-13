@@ -759,21 +759,42 @@ public class GoogleVision extends AppCompatActivity {
                     match_images.clear();
                     adapter.notifyDataSetChanged();
                 }
+                else
+                {
+                    stv_visuallySimilarImages.setVisibility(View.VISIBLE);
+                    srecycler_match_images.setVisibility(View.VISIBLE);
+                }
                 if(match_pages.size()!=0)
                 {
                     match_pages.clear();
                     listAdapter.notifyDataSetChanged();
+                }
+                else
+                {
+                    stv_pagesWithMatchingImages.setVisibility(View.VISIBLE);
+                    srecycler_pagesWithMatchingImages.setVisibility(View.VISIBLE);
                 }
                 if(partial_images.size()!=0)
                 {
                     partial_images.clear();
                     adapter1.notifyDataSetChanged();
                 }
+                else
+                {
+                    stv_partialMatchingImages.setVisibility(View.VISIBLE);
+                    srecycler_partialMatchingImages.setVisibility(View.VISIBLE);
+                }
                 if(web_entities.size()!=0)
                 {
                     web_entities.clear();
                     listEntities.notifyDataSetChanged();
                 }
+                else
+                {
+                    stv_webEntities.setVisibility(View.VISIBLE);
+                    srecycler_webEntities.setVisibility(View.VISIBLE);
+                }
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(GoogleVision.this);
                 builder
                         .setMessage(R.string.dialog_select_prompt)
